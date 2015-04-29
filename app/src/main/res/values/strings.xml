@@ -7,7 +7,7 @@
     <string name="drawer_closed">Drawer closed</string>
 
     <string name="popular_movies_fragment">Popular</string>
-
+    <string name="my_fragment">Trending</string>
 
 
     <!--    You must add an item here for it to show up in the navigation drawer.
@@ -15,9 +15,13 @@
 
          Do not touch first item.
          The strings added here should refer to a string created above.-->
+    //Lagt in my fragment
     <string-array name="drawer_items">
         <item>@string/popular_movies_fragment</item>
+        <item>@string/my_fragment</item>
     </string-array>
+
+
 
     <string name="retrofit_network_error">Network error</string>
 </resources>
