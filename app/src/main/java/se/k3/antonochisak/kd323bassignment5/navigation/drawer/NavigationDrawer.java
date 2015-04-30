@@ -106,6 +106,7 @@ public class NavigationDrawer implements AdapterView.OnItemClickListener {
                 break;
             case 1:
                 fragment = new MyFragment();
+                break;
             default:
                 break;
         }

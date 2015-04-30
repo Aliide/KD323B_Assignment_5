@@ -14,7 +14,7 @@
 
     <GridView
         android:layout_below="@+id/progress_bar"
-        android:id="@+id/gridView"
+        android:id="@+id/listView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:horizontalSpacing="1dp"

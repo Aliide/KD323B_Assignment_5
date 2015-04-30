@@ -28,9 +28,8 @@ import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 import se.k3.antonochisak.kd323bassignment5.R;
-import se.k3.antonochisak.kd323bassignment5.adapters.PopularMoviesAdapter;
+import se.k3.antonochisak.kd323bassignment5.adapters.MyAdapter;
 import se.k3.antonochisak.kd323bassignment5.api.RestClient;
-import se.k3.antonochisak.kd323bassignment5.api.model.ApiResponse;
 import se.k3.antonochisak.kd323bassignment5.api.model.RootApiResponse;
 import se.k3.antonochisak.kd323bassignment5.models.movie.Movie;
 
@@ -59,12 +58,12 @@ public class MyFragment extends MoviesFragment
     CountDownTimer mVoteTimer;
     boolean mIsVoteTimerRunning = false;
 
-    PopularMoviesAdapter mAdapter;
+    MyAdapter mAdapter;
 
-    @InjectView(R.id.gridView)
-    GridView mMoviesGrid;
+    @InjectView(R.id.listView)
+    ListView mMoviesGrid;
 
-    @InjectView(R.id.progress_bar)
+    @InjectView(R.id.my_progress_bar)
     ProgressBar mProgressBar;
 
     @Override
@@ -86,7 +85,7 @@ public class MyFragment extends MoviesFragment
         ButterKnife.inject(this, view);
 
         // Create adapter
-        mAdapter = new PopularMoviesAdapter(mMovies, getActivity().getLayoutInflater());
+        mAdapter = new MyAdapter(mMovies, getActivity().getLayoutInflater());
         mMoviesGrid.setAdapter(mAdapter);
 
         // listener= GridView.OnItemClickListener
@@ -137,7 +136,7 @@ public class MyFragment extends MoviesFragment
         mRef.child(mCurrentClickedMovie).updateChildren(mMovieMap, new Firebase.CompletionListener() {
             @Override
             public void onComplete(FirebaseError firebaseError, Firebase firebase) {
-                Toast.makeText(getActivity(), "Grillade " + mMovies.get(i).getTitle(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Gillade " + mMovies.get(i).getTitle(), Toast.LENGTH_SHORT).show();
                 updateVotes();
             }
         });

@@ -44,7 +44,7 @@ public class MyAdapter extends BaseAdapter {
 
     // We always use a viewholder pattern on listviews!
     class ViewHolder {
-        @InjectView(R.id.poster)
+        @InjectView(R.id.iw_poster)
         ImageView poster;
 
         public ViewHolder(View view) {
@@ -60,7 +60,7 @@ public class MyAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder;
         if (view == null) {
-            view = mLayoutInflater.inflate(R.layout.popular_list_item, viewGroup, false);
+            view = mLayoutInflater.inflate(R.layout.my_list_item, viewGroup, false);
             holder = new ViewHolder(view);
             view.setTag(holder);
         } else {

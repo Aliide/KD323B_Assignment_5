@@ -27,6 +27,6 @@ public interface ApiService {
     void getPopular(@Query("extended") String extended, Callback<List<ApiResponse>> callback);
 
     @Headers({TRAKT_CONTENT_TYPE, TRAKT_API_KEY, TRAKT_API_VERSION})
-    @GET("https://api-v2launch.trakt.tv/movies/trending") // finished url
+    @GET("/movies/trending") // finished url
     void getTrending(@Query("extended") String extended, Callback<List<RootApiResponse>> callback);
 }
